@@ -10,13 +10,26 @@
     <packaging>war</packaging>
     <name>web-application Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+        </dependency>
     </dependencies>
+
+
     <build>
         <finalName>web-application</finalName>
     </build>

@@ -3,5 +3,33 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <servlet>
+        <servlet-name>jerseyServlet</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>com.wbl.web.application.view</param-value>
+        </init-param>
+        
+        <!--<init-param>-->
+            <!--<param-name>com.sun.jersey.spi.container.ContainerRequestFilters</param-name>-->
+            <!--<param-value>com.wbl.api.framework.filter.request.ParameterValidatorResourceFilter</param-value>-->
+        <!--</init-param>-->
+        <!--<init-param>-->
+            <!--<param-name>com.sun.jersey.spi.container.ContainerResponseFilters</param-name>-->
+            <!--<param-value>com.wbl.api.framework.filter.response.ResponseTestFilter</param-value>-->
+        <!--</init-param>-->
+        <init-param>
+            <param-name>com.sun.jersey.spi.container.ResourceFilters</param-name>
+            <param-value>com.wbl.api.framework.filter.ApiResourceFilterFactory</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>jerseyServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
